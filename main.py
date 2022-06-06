@@ -1,10 +1,30 @@
-import tkinter as tk
+from tkinter import *
+from PIL import ImageTk, Image
+ws = Tk()
+ws.title('PythonGuides')
+ws.geometry('500x500')
+ws.config(bg='yellow')
 
+img = ImageTk.PhotoImage(Image.open("bg.jpg"))
+label = Label(
+    ws,
+    image=img
+)
+label.place(x=0, y=0)
 
-root = tk.Tk()
+text = Text(
+    ws,
+    height=10,
+    width=53
+)
+text.place(x=30, y=50)
 
+button = Button(
+    ws,
+    text='SEND',
+    relief=RAISED,
+    font=('Arial Bold', 18)
+)
+button.place(x=190, y=250)
 
-label = tk.Label(root, text="Hello world")
-label.pack(padx=20, pady=20)
-
-root.mainloop()
+ws.mainloop()
